@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 html {
-	font-size: 10px;
+	font-size: 100%;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }
@@ -42,6 +42,7 @@ img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+  
 }
 p {
  text-align: justify;
@@ -53,7 +54,7 @@ p {
 	letter-spacing: 0.05rem;
 }
 .section-title {
-	font-size: 4rem;
+	font-size: 2rem;
 	font-weight: 300;
 	color: #fff;
 	margin-bottom: 10px;
@@ -85,7 +86,7 @@ p {
 	background-color: crimson;
 }
 .brand h1 {
-	font-size: 2rem;
+	font-size:1.5rem;
 	text-transform: uppercase;
 	color: white;
 }
@@ -228,14 +229,14 @@ p {
 	background-position: top center;
 	position: relative;
 	z-index: 1;
-  overflow-y: auto;
+  height: 1250px;
 }
 #hero::after {
 	content: '';
 	position: absolute;
 	left: 0;
 	top: 0;
-	height: 1080px;
+	height: 1250px;
 	width: 100%;
 	background-color: black;
 	opacity: 0.7;
@@ -260,15 +261,10 @@ p {
 }
 #formmain {
 display: flex;
-    /* flex-direction: row; */
     width: 70%;
-    /* max-height: 750px; */
-    /* min-height: 200px; */
     margin: -35px 0 0 -35px;
     position: absolute;
-    /* left: 50%; */
     top: 20%;
-    /* transform: translate(-50%,-50%); */
     background-color: #d1c8c914;
 }
 
@@ -302,7 +298,7 @@ display: flex;
 #hero p {
 	display: block;
 	width: fit-content;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	position: relative;
 	color: transparent;
 	animation: text_reveal 0.5s ease forwards;
@@ -378,8 +374,10 @@ display: flex;
 }
 
 #myimage {
-    max-height: 325px;
-    max-width: 325px;
+  height:325px;
+  width:325px;
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 50%;
     display: flex;
 }
@@ -399,8 +397,10 @@ display: flex;
 
 }
 .contact-btn{
-display: block;
-    width: fit-content;
+justify-content: center;
+    display: flex;
+    height: 54px;
+    width: 100%;
     font-size: 1.5rem;
     float: right;
     color: #fff;
@@ -409,9 +409,8 @@ display: block;
     padding: 10px 40px;
     border-radius: 5px;
     margin-top: 30px;
-  text-transform:uppercase;
-
- 
+    text-transform: uppercase;
+    text-align: center; 
 }
 
 .flip-card {
@@ -467,6 +466,7 @@ display: block;
     left: 50%;
     top: 15%;
     transform: translate(-50%,-0);
+    font-size:2rem !important;
 }
 
 /* Style the back side */
@@ -483,96 +483,6 @@ display: block;
 
 
 /* End Hero Section */
-
-
-
-/* Keyframes */
-@keyframes hamburger_puls {
-	0% {
-		opacity: 1;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(1.4);
-	}
-}
-@keyframes text_reveal_box {
-	50% {
-		width: 100%;
-		left: 0;
-	}
-	100% {
-		width: 0;
-		left: 100%;
-	}
-}
-@keyframes text_reveal {
-	100% {
-		color: white;
-	}
-}
-@keyframes button_reveal {
-	100% {
-		color: white;
-    border: 2px solid crimson;
-	}
-}
-@keyframes text_reveal_name {
-	100% {
-		color: crimson;
-		font-weight: 500;
-	}
-}
-/* End Keyframes */
-
-/* Media Query For Tablet */
-@media only screen and (min-width: 768px) {
-	.cta {
-		font-size: 1.5rem;
-		padding: 10px 30px;
-	}
-	h1.section-title {
-		font-size: 2rem;
-	}
-
-	/* Hero */
-	#hero h1 {
-		font-size: 2rem;
-	}
-	/* End Hero */
-
-
-
-/* End Media Query For Tablet */
-
-/* Media Query For Desktop */
-@media only screen and (min-width: 1200px) {
-	/* header */
-	#header .hamburger {
-		display: none;
-	}
-	#header .nav-list ul {
-		position: initial;
-		display: block;
-		height: auto;
-		width: fit-content;
-		background-color: transparent;
-	}
-	#header .nav-list ul li {
-		display: inline-block;
-	}
-	#header .nav-list ul li a {
-		font-size: 1.5rem;
-	}
-	#header .nav-list ul a:after {
-		display: none;
-	}
-	/* End header */
-
-
-/* End  Media Query For Desktop */
-
 #contacthero {  
   background-image: url(https://wallpaperaccess.com/full/2901843.png);
 	background-size: cover;
@@ -741,8 +651,6 @@ label {
     width: 100%;
     height: 38px !important;
     padding: 0.375rem 0.75rem;
-    font-size: 1.5rem;
-    font-weight: 500;
     line-height: 1.5;
     color: #2c292a;
     background-color: #fff;
@@ -752,16 +660,32 @@ label {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
       input:focus, textarea:focus, select:focus{
-        outline: 1px solid crimson;
-        box-shadow:1px solid crimson;
+        outline: 2px solid #eee8e8;
     }
+        input:invalid:focus, textarea:focus:invalid,select:focus:invalid{
+        outline: 2px solid #eee8e8;
+          background: #fff;
+    }
+/*     input:invalid:placeholder-shown,textarea:invalid:placeholder-shown {
+        outline: none !important;
+          background: #fff !important;
+}
+  input:invalid,textarea:invalid {
+outline: 1px solid red;
+    background: #efbdc7cc;
+} */
+
+
+input:valid {
+  outline: none;
+  box-shadow:none;
+}
 
 .form-control-textarea{
       display: block;
     width: 100%;
     height: 100px !important;
     padding: 0.375rem 0.75rem;
-    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
     color: #2c292a;
@@ -876,7 +800,7 @@ background: crimson;
 #footer h2 {
 	color: white;
 	font-weight: 500;
-	font-size: 1.8rem;
+	font-size: 1rem;
 	letter-spacing: 0.1rem;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -899,6 +823,193 @@ background: crimson;
 }
 #footer p {
 	color: white;
-	font-size: 1.3rem;
+	font-size: 1rem;
 }
 /* End Footer */
+
+
+
+
+
+
+
+
+
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes button_reveal {
+	100% {
+		color: white;
+    border: 2px solid crimson;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	.cta {
+		font-size: 1.5rem;
+		padding: 10px 30px;
+	}
+	h1.section-title {
+		font-size: 2rem;
+	}
+
+	/* Hero */
+	#hero h1 {
+		font-size: 1.5rem;
+	}
+	/* End Hero */
+
+
+
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+
+/* End  Media Query For Desktop */
+
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+/* Media Queries*/
+@media (min-width: 640px) { 
+  body {
+    font-size:.7rem;
+  } 
+
+
+}
+@media (min-width:960px) {
+  body {
+    font-size:.9rem;
+  }
+}
+@media (min-width:1100px) { 
+  body {
+    font-size:1.2rem;
+  } 
+}

@@ -25,7 +25,7 @@
           <ul>
             <li><a href="/index.html" data-after="Home">Home</a></li>
             <li><a href="/contact.html" target="_self">Contact</a></li>
-             <li><a href="/login.html" target="_self">Login</a></li>
+             <li><a href="/login.html" target="_self">Sign In</a></li>
              <li><a href="/register.html" target="_self">Register</a></li>
             
 
@@ -42,28 +42,28 @@
           <form class="sign-form">
           <div class="sign-title" style="margin-bottom: 20px;text-align: center;"> Create Account</div>
             <div class="row">
-            <div class="form-group"><label>First Name</label><input name="firstName" type="text" class="form-control"></div>
-            <div class="form-group"><label>Last Name</label><input name="lastName" type="text" class="form-control"></div>
+            <div class="form-group"><label>First Name</label><input name="firstName" type="text" class="form-control" required></div>
+            <div class="form-group"><label>Last Name</label><input name="lastName" type="text" class="form-control"  required></div>
             </div> 
                         <div class="row">
-            <div class="form-group"><label>Gender</label><select name="gender" type="gender" class="form-control"><option  disabled="">Gender</option><option value="Male">Male</option><option value="Female">Female</option><option value="Trans">Trans</option></select></div>
-             <div class="form-group"><label>Date of Birth</label><input name="datwofbirth" type="date" class="form-control"></div>
+            <div class="form-group"><label>Gender</label><select name="gender" type="gender" class="form-control"  required><option  disabled="">Gender</option><option disabled selected value > -- select gender -- </option><option value="Male">Male</option><option value="Female">Female</option><option value="Trans">Trans</option></select></div>
+             <div class="form-group"><label>Date of Birth</label><input name="dateofbirth" type="date" class="form-control"  required></div>
             </div>
             <div class="row">
-            <div class="form-group"><label>Phone Number</label><input name="phonenummber" type="text" class="form-control"></div>
-            <div class="form-group"><label>Email Address</label><input name="email" type="text" class="form-control"></div>
+            <div class="form-group"><label>Phone Number</label><input name="phonenummber" type="tel" class="form-control"  required></div>
+            <div class="form-group"><label>Email Address</label><input name="email" type="email" class="form-control" ></div>
             </div>
             <div class="row">
-                <div class="form-group"><label>Country</label><input name="phonenummber" type="text" class="form-control"></div>
-                <div class="form-group"><label>State/Province/County</label><input name="email" type="text" class="form-control"></div>
+                <div class="form-group"><label>Country</label><input name="country" type="text" class="form-control"  required></div>
+                <div class="form-group"><label>State/Province/County</label><input name="state" type="text" class="form-control" required></div>
             </div>
 
             <div class="row">
-            <div class="form-group"><label>Password</label><input name="password" type="password" class="form-control" ></div>
-            <div class="form-group"><label>Confirm Password</label><input name="confirm-password" type="password" class="form-control" ></div>
+            <div class="form-group"><label>Password</label><input name="password" type="password" class="form-control" required></div>
+            <div class="form-group"><label>Confirm Password</label><input name="confirm-password" type="password" class="form-control" required ></div>
             </div>
             <div class="form-row"><div class="form-group col"><button type="submit" class="btn_crimson">Register</button></div></div>
-            <div class="new-account">Already have an account? <a href="/login.html" class="signup-show">Login</a></div>
+            <div class="new-account">Already have an account? <a href="/login.html" class="signup-show">Sign In</a></div>
           </form>
         </div>
     
